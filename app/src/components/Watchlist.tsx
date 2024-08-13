@@ -86,7 +86,7 @@ function Watchlist() {
 						{watchlist.length === 0 && (
 							<Text fontSize="sm">
 								Nothing on your watchlist. Search stocks and click "Add to
-								Waitlist"!
+								Watchlist"!
 							</Text>
 						)}
 					</Stack>

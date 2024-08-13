@@ -185,15 +185,7 @@ const search = async (req: Request, res: Response) => {
 
 	searchStocks(query)
 		.then((quotes) => {
-			let stocksAndCurrencies = quotes.filter(
-				(quote: { quoteType: string }) => {
-					return (
-						quote.quoteType &&
-						quote.quoteType !== "FUTURE" &&
-						quote.quoteType !== "Option"
-					);
-				},
-			);
+			let stocksAndCurrencies = quotes;
 			res.status(200).send(stocksAndCurrencies);
 		})
 		.catch((err) => {

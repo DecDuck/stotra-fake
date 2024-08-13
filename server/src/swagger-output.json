@@ -170,22 +170,6 @@
         ]
       }
     },
-    "/api/user/leaderboard": {
-      "get": {
-        "tags": [
-          "Leaderboard"
-        ],
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
     "/api/user/watchlist": {
       "get": {
         "tags": [

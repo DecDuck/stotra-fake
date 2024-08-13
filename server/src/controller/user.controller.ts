@@ -71,7 +71,7 @@ const getPortfolio = async (req: Request, res: Response) => {
 			// Create list of positions to send to frontend with data from user.positions plus the properties from the fetchStockData response
 			user!.positions.forEach((position) => {
 				const positionLiveData = values.find(
-					(value) => value.symbol === position.symbol,
+					(value) => value.symbol === position.symbol
 				);
 				if (positionLiveData) {
 					listOfPositions.push({
@@ -80,6 +80,8 @@ const getPortfolio = async (req: Request, res: Response) => {
 					});
 				}
 			});
+
+			console.log(listOfPositions);
 
 			res.status(200).json({
 				portfolioValue,
@@ -105,7 +107,7 @@ const getWatchlist = (req: Request, res: Response) => {
 				// Get the current price of each stock in the watchlist
 				Promise.all(user!.watchlist.map((symbol) => fetchStockData(symbol)))
 					.then((values) => {
-						res.status(200).json({ watchlist: values });
+						res.status(200).json({ watchlist: values.filter((e) => e) });
 					})
 					.catch((err) => {
 						res.status(500).send({ message: err.message });
@@ -144,7 +146,7 @@ const removeFromWatchlist = (req: Request, res: Response) => {
 		.then((user) => {
 			if (user!.watchlist.includes(req.params.symbol)) {
 				user!.watchlist = user!.watchlist.filter(
-					(symbol) => symbol !== req.params.symbol,
+					(symbol) => symbol !== req.params.symbol
 				);
 				user!.save();
 				res.status(200).json({ message: "Removed from watchlist" });

@@ -140,9 +140,6 @@ export default function StockChart(props: { symbol: string }) {
 		axios
 			.get(`/api/stocks/${props.symbol}/historical?period=` + period)
 			.then((res) => {
-				// if (chartComponentRef !== null) {
-				// chartComponentRef.current!.chart!.series[0]!.setData(res.data);
-				// } else {
 				setOptions({
 					...options,
 					series: [
@@ -159,7 +156,6 @@ export default function StockChart(props: { symbol: string }) {
 						},
 					],
 				});
-				// }
 				setIsLoading(false);
 			});
 	};

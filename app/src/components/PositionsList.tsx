@@ -26,6 +26,7 @@ function PositionsList() {
 
 	useEffect(() => {
 		accounts.getPortfolio().then(({ positions }) => {
+			console.log(positions);
 			setPositions(positions);
 			setIsLoading(false);
 		});

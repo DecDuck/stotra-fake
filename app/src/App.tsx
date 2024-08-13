@@ -6,7 +6,6 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Login = lazy(() => import("./pages/Login"));
 const Signup = lazy(() => import("./pages/Signup"));
 const StockView = lazy(() => import("./pages/StockView"));
-const Leaderboard = lazy(() => import("./pages/Leaderboard"));
 import NotFound from "./pages/NotFound";
 
 export type Transaction = {
@@ -52,8 +51,6 @@ function App() {
 
 							<Route path="/signup" element={<Signup />}></Route>
 
-							<Route path="/leaderboard" element={<Leaderboard />}></Route>
-
 							<Route path="/stocks/:symbol" element={<StockView />}></Route>
 
 							{/* Add 404*/}
@@ -64,14 +61,7 @@ function App() {
 			</Container>
 			<Box textAlign="center" py="10">
 				<Text fontSize="sm" color="gray.500">
-					Built by{" "}
-					<Link href="https://spike.codes" fontWeight="bold">
-						Spike
-					</Link>{" "}
-					on{" "}
-					<Link href="https://github.com/spikecodes/stotra" fontWeight="bold">
-						GitHub
-					</Link>
+					Built by DecDuck
 				</Text>
 			</Box>
 		</>

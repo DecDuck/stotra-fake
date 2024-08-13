@@ -5,7 +5,6 @@ import authController from "./controller/auth.controller";
 import userController from "./controller/user.controller";
 import stocksController from "./controller/stocks.controller";
 import newsController from "./controller/news.controller";
-import leaderboardController from "./controller/leaderboard.controller";
 
 // Auth routes
 router.post(
@@ -27,7 +26,6 @@ router.get(
 	[authJwt.verifyToken],
 	userController.getPortfolio,
 );
-router.get("/api/user/leaderboard", leaderboardController.getLeaderboard);
 
 // User watchlist routes
 router.get(

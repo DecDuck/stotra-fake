@@ -7,6 +7,7 @@ import {
 	useColorModeValue,
 	withDefaultColorScheme,
 } from "@chakra-ui/react";
+import { withProse } from "@nikolovlazar/chakra-ui-prose";
 import { BrowserRouter } from "react-router-dom";
 
 import "@fontsource-variable/manrope";
@@ -45,6 +46,7 @@ const customTheme = extendTheme(
 			},
 		},
 	},
+	withProse()
 );
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -52,5 +54,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 		<ChakraProvider theme={customTheme}>
 			<App />
 		</ChakraProvider>
-	</BrowserRouter>,
+	</BrowserRouter>
 );
